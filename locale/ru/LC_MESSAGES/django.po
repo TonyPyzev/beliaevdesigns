@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-07 19:30+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\website\templates\index.html:26 .\website\templates\index.html:61
+#: .\website\templates\index.html:26 .\website\templates\index.html:61
+msgid "Головна"
+msgstr "Главная"
+
+#: .\website\templates\index.html:27 .\website\templates\index.html:62
+#: .\website\templates\index.html:98
+msgid "Портфоліо"
+msgstr "Портфолио"
+
+#: .\website\templates\index.html:28 .\website\templates\index.html:63
+#: .\website\templates\index.html:130
+msgid "Послуги"
+msgstr "Услуги"
+
+#: .\website\templates\index.html:29 .\website\templates\index.html:64
+msgid "Контакти"
+msgstr "Контакты"
+
+#: .\website\templates\index.html:92
+msgid "Створюємо простір для вашого життя"
+msgstr "Создаем пространство для вашей жизни"
+
+#: .\website\templates\index.html:138
+msgid "Технічний проєкт"
+msgstr "Технический проект"
+
+#: .\website\templates\index.html:139
+msgid "18€/М<sup>2</sup>"
+msgstr "18€/М<sup>2</sup>"
+
+#: .\website\templates\index.html:141
+msgid ""
+"Повний технічний проєкт, виконаний професіоналами за мінімальний термін. Він "
+"дає будівельникам максимально повну інформацію для здійснення обробки та "
+"ремонту Вашого дому."
+msgstr ""
+"Полный технический проект, выполненный профессионалами в минимальный срок. "
+"Он дает строителям максимально полную информацию для обработки и ремонта "
+"Вашего дома."
+
+#: .\website\templates\index.html:148
+msgid "Технічний проєкт<br>Дизайн"
+msgstr "Технический проект<br>Дизайн"
+
+#: .\website\templates\index.html:149
+msgid "35€/М<sup>2</sup>"
+msgstr "35€/М<sup>2</sup>"
+
+#: .\website\templates\index.html:151
+msgid ""
+"Повний технічний проєкт з якісною 3D-візалізацією майбутнього інтер'єру. "
+"Обираючи такий пакет послуг - ви можете втілити, побачити та скоригувати Ваш "
+"майбутній інтер'єр ще до початку ремонту."
+msgstr ""
+"Полный технический проект с качественной 3D визализацией будущего интерьера. "
+"Выбирая такой пакет услуг – вы можете реализовать, увидеть и скорректировать "
+"Ваш будущий интерьер еще до начала ремонта."
+
+#: .\website\templates\index.html:158
+msgid "Технічний проєкт<br>Дизайн<br>Авторський нагляд"
+msgstr "Технический проект<br>Дизайн<br>Авторский надзор"
+
+#: .\website\templates\index.html:159
+msgid "55€/М<sup>2</sup>"
+msgstr "55€/М<sup>2</sup>"
+
+#: .\website\templates\index.html:161
+msgid ""
+"Повний авторський нагляд на усіх етапах ремонту: починаючи від технічного "
+"проєкту та 3D-візалізації відповідно до ваших побажань, завершуючи повним "
+"контролем та професійною підтримкою нашої або вашої ремонтно-будівельної "
+"бригади до завершення повного ремонту."
+msgstr ""
+"Полный авторский надзор на всех этапах ремонта: начиная от технического "
+"проекта и 3D-визализации в соответствии с вашими пожеланиями, завершая "
+"полным контролем и профессиональной поддержкой нашей или вашей ремонтно-"
+"строительной бригады до завершения полного ремонта."
+
+#: .\website\templates\index.html:170
+msgid "Напишіть нам та ми обговоримо ваш проєкт"
+msgstr "Напишите нам и мы обсудим ваш проект"
+
+#: .\website\templates\index.html:173
+msgid "Ім&#39;я*"
+msgstr "Имя"
+
+#: .\website\templates\index.html:179
+msgid "Повідомлення"
+msgstr "Сообщение"
+
+#: .\website\templates\index.html:182
+msgid "Адреса, площа, тип об'єкту"
+msgstr "Адрес, площадь, тип объекта"
+
+#: .\website\templates\index.html:189
+msgid "Додати план прєкту (до 25МБ)"
+msgstr "Добавить план проекта (до 25 МБ)"
+
+#: .\website\templates\index.html:192
+msgid "Надіслати"
+msgstr "Отправить"
+
+#: .\website\templates\index.html:204
+msgid "Співпраця"
+msgstr "Сотрудничество"
+
+#: .\website\templates\index.html:208
+msgid "Вакансії"
+msgstr "Вакансии"
+
+#: .\website\templates\index.html:212
+msgid "Замовити послугу"
+msgstr "Заказать услугу"
+
+#: .\website\templates\index.html:216
+msgid "Постачальникам"
+msgstr "Поставщикам"

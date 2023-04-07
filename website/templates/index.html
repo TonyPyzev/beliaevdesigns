@@ -1,0 +1,240 @@
+{% load i18n %}
+{% load static %}
+{% load static i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+<!DOCTYPE html>
+<html lang="{{LANGUAGE_CODE}}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'assets/images/icons/BeliaevIcon.png' %}">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <title>BeliaevDesigns</title>
+  </head>
+  <body>
+    <div id="splashscreen">
+      <img src="{% static 'assets/images/icons/Beliaevdesigns.png' %}" alt="">
+    </div>
+    <div class="app-bar-desktop">
+      <a href="#header"><img class="logo" src="{% static 'assets/images/icons/Beliaevdesigns.png' %}" alt=""></a>
+      <ul class="app-bar-navigation">
+        <li><a href="#header">{% trans 'Головна' %}</a></li>
+        <li><a href="#projects">{% trans 'Портфоліо' %}</a></li>
+        <li><a href="#prices">{% trans 'Послуги' %}</a></li>
+        <li><a href="#form-section">{% trans 'Контакти' %}</a></li>
+      </ul>
+      <div class="app-bar__trail">
+        <div id="phoneNumbers" class="phone-numbers phone-numbers__hidden">
+          <a href="tel:+380680178738">+380680178738</a>
+          <div class="spacer"></div>
+          <a href="tel:+380500314442">+380500314442</a>
+        </div>
+        <img id="phoneIcon" class="phone-icon" src="{% static 'assets/images/icons/phone.png' %}" alt="" onclick="showNumbers()">
+        <img id="xIcon" class="x-icon hidden" src="{% static 'assets/images/icons/x.png' %}" alt="" onclick="hideNumbers()">
+        <form class="lang" action="{% url 'set_language' %}" method="post">
+          {% csrf_token %}
+          <input name="next" type="hidden" value="/" />
+          <select class="selectpicker" name="language" style="width: auto;" onchange="this.form.submit()">
+            {% for language in languages %}
+              <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                {{ language.code }}
+              </option>
+            {% endfor %}
+          </select>
+        </form>
+      </div>
+    </div>
+
+    <div id="appBarMobile" class="app-bar-mobile">
+      <div class="app-bar-mobile-header">
+        <a href="#header"><img class="logo" src="{% static 'assets/images/icons/Beliaevdesigns.png' %}" alt=""></a>
+        <img id="circleIcon" class="circle-icon" src="{% static 'assets/images/icons/circle.png' %}" alt="" onclick="openAppBarMobile()">
+        <img id="xCircleIcon" class="x-circle-icon" src="{% static 'assets/images/icons/x-circle.png' %}" alt="" onclick="closeAppBarMobile()">
+      </div>
+      <div id="appBarMobileBody" class="app-bar-mobile-body closed">
+        <ul class="app-bar-mobile-menu">
+          <li><a href="#header" onclick="closeAppBarMobile()">{% trans 'Головна' %}</a></li>
+          <li><a href="#projects" onclick="closeAppBarMobile()">{% trans 'Портфоліо' %}</a></li>
+          <li><a href="#prices" onclick="closeAppBarMobile()">{% trans 'Послуги' %}</a></li>
+          <li><a href="#form-section" onclick="closeAppBarMobile()">{% trans 'Контакти' %}</a></li>
+        </ul>
+        <div class="app-bar-mobile-contacts">
+          <a href="tel:"><img src="{% static 'assets/images/icons/phone.png' %}" alt="">+380680178738</a>
+          <a href="mailto:"><img src="{% static 'assets/images/icons/mail.png' %}" alt="">somemail@gmail.com</a>
+          <a href="tel:"><img src="{% static 'assets/images/icons/phone.png' %}" alt="">+380500314442</a>
+        </div>
+        <div class="app-bar-mobile-links">
+          <a href="#"><img src="{% static 'assets/images/icons/social_media/Instagram.png' %}" alt=""></a>
+          <a href="#"><img src="{% static 'assets/images/icons/social_media/Youtube.png' %}" alt=""></a>
+          <a href="#"><img src="{% static 'assets/images/icons/social_media/Telegram.png' %}" alt=""></a>
+          <a href="#"><img src="{% static 'assets/images/icons/social_media/Facebook.png' %}" alt=""></a>
+        </div>
+      </div>
+      
+
+    </div>
+
+    <div class="social-media-bar">
+      <a class="social-media-bar__button" href="#">Instagram</a>
+      <a class="social-media-bar__button" href="#">Youtube</a>
+      <a class="social-media-bar__button" href="#">Telegram</a>
+      <a class="social-media-bar__button" href="#">Facebook</a>
+    </div>
+
+    <header id="header">
+      <div class="filter">
+        <img src="{% static 'assets/images/icons/Beliaevdesigns.png' %}" alt="">
+        <p>{% trans 'Створюємо простір для вашого життя' %}</p>
+      </div>
+    </header>
+
+    <section id="projects">
+      <div class="section-header">
+        <h1>{% trans 'Портфоліо' %}</h1>
+        <img src="{% static 'assets/images/icons/arrow-circle.png' %}" alt="">
+      </div>
+
+      <div class="cards-grid">
+        <div class="card card_small">
+          <img class="card__img" src="{% static 'assets/images/main/vanna1.1-min.png' %}" alt="">
+          <div class="card__gradient transperent"></div>
+          <h2 class="card__title transperent">Квартира<br>самодостатньої<br>жінки</h2>
+          <h3 class="card__subtitle transperent">Київ, Паньківська, 20</h3>
+        </div>
+        <div class="card-comming-soon card_small">
+          <img class="card__img_blur" src="{% static 'assets/images/main/spalna2-min.png' %}" alt="">
+          <div class="card__gradient"></div>
+          <h2 class="card__title">Coming<br>soon</h2>
+        </div>
+        <div class="card-comming-soon card_small">
+          <img class="card__img_blur" src="{% static 'assets/images/main/kr1-min.png' %}" alt="">
+          <div class="card__gradient"></div>
+          <h2 class="card__title">Coming<br>soon</h2>
+        </div>
+      </div>
+
+      <div class="card card_big">
+        <img class="card__img" src="{% static 'assets/images/main/gt5-min.png' %}" alt="">
+        <div class="card__gradient"></div>
+      </div>
+
+    </section>
+
+    <section id="prices">
+      <div class="section-header">
+        <h1>{% trans 'Послуги' %}</h1>
+        <img src="{% static 'assets/images/icons/arrow-circle.png' %}" alt="">
+      </div>
+
+      <div class="cards-grid">
+        <div class="card card_small">
+          <img class="card__img" src="{% static 'assets/images/main/Spalnya1-min.png' %}" alt="">
+          <div class="card__gradient"></div>
+          <h2 class="card__title slideTop">{% trans 'Технічний проєкт' %}</h2>
+          <h3 class="card__subtitle fade">{% trans '18€/М<sup>2</sup>' %}</sup></h3>
+          <div class="description">
+            <p>{% trans 'Повний технічний проєкт, виконаний професіоналами за мінімальний термін. Він дає будівельникам максимально повну інформацію для здійснення обробки та ремонту Вашого дому.' %}</p>
+          </div>
+        </div>
+
+        <div class="card card_small">
+          <img class="card__img" src="{% static 'assets/images/main/kr3-min.png' %}" alt="">
+          <div class="card__gradient"></div>
+          <h2 class="card__title slideTop">{% trans 'Технічний проєкт<br>Дизайн' %}</h2>
+          <h3 class="card__subtitle fade">{% trans '35€/М<sup>2</sup>' %}</h3>
+          <div class="description">
+            <p>{% trans "Повний технічний проєкт з якісною 3D-візалізацією майбутнього інтер'єру. Обираючи такий пакет послуг - ви можете втілити, побачити та скоригувати Ваш майбутній інтер'єр ще до початку ремонту." %}</p>
+          </div>
+        </div>
+
+        <div class="card card_small">
+          <img class="card__img" src="{% static 'assets/images/main/gost6-min.png' %}" alt="">
+          <div class="card__gradient"></div>
+          <h2 class="card__title slideTop">{% trans 'Технічний проєкт<br>Дизайн<br>Авторський нагляд' %}</h2>
+          <h3 class="card__subtitle fade">{% trans '55€/М<sup>2</sup>' %} </h3>
+          <div class="description">
+            <p>{% trans 'Повний авторський нагляд на усіх етапах ремонту: починаючи від технічного проєкту та 3D-візалізації відповідно до ваших побажань, завершуючи повним контролем та професійною підтримкою нашої або вашої ремонтно-будівельної бригади до завершення повного ремонту.' %}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form-section">
+      <form id="form" class="form" method="post" autocomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3 class="asd">{% trans 'Напишіть нам та ми обговоримо ваш проєкт' %}</h3>
+        
+        <div class="small-fields">
+          <input id="inputName" class="input-name" type="text" name="inputName" placeholder="{% trans 'Ім&#39;я*' %}" required minlength="2">
+          <input id="inputEmail" class="input-email" type="email" name="inputEmail"  placeholder="E-mail*" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          <input id="inputTel" class="input-tel" type="tel" name="inputTel" placeholder="+380" pattern="^\+?3?8?(0\d{9})$" minlength="13" maxlength="13">
+        </div>
+
+        <div class="textarea-box">
+          <textarea id="inputMsg" class="input-msg" name="inputMsg" cols="30" rows="10" placeholder="{% trans 'Повідомлення' %}" autocapitalize="sentences"></textarea>
+          <img src="{% static 'assets/images/icons/info.png' %}" alt="" onclick="openCloseMsgHint()">
+          <div id="msg-hint" class="msg-hint msg-hint_hidden">
+            <p>{% trans "Адреса, площа, тип об'єкту" %}</p>
+          </div>
+        </div>
+
+        <div class="form-bottom-bar">
+          <div class="attach-file">
+            <img src="{% static 'assets/images/icons/paperclip.png' %}" alt="">
+            <label id="inputFileLabel" for="inputFile">{% trans 'Додати план прєкту (до 25МБ)' %}</label>
+            <input id="inputFile" type="file" name="attach">
+          </div>
+          <button type="submit">{% trans 'Надіслати' %}</button>
+        </div>
+
+      </form>
+      <img src="{% static 'assets/images/main/top-min.png' %}" alt="">
+    </section>
+
+    <footer id="footer">
+
+      <div>
+        <div class="email-contacts">
+          <div class="contact">
+            <h3>{% trans 'Співпраця' %}</h3>
+            <a href="mailto:">partner@somemail.com</a>
+          </div>
+          <div class="contact">
+            <h3>{% trans 'Вакансії' %}</h3>
+            <a href="mailto:">career@somemail.com</a>
+          </div>
+          <div class="contact">
+            <h3>{% trans 'Замовити послугу' %}</h3>
+            <a href="mailto:">project@somemail.com</a>
+          </div>
+          <div class="contact">
+            <h3>{% trans 'Постачальникам' %}</h3>
+            <a href="mailto:">supply@somemail.com</a>
+          </div>
+        </div>
+  
+        <div class="phones">
+          <a href="tel:"><img src="{% static 'assets/images/icons/phone.png' %}" alt="">+380680178738</a>
+          <a href="tel:"><img src="{% static 'assets/images/icons/phone.png' %}" alt="">+380500314442</a>
+        </div>
+      </div>
+
+      <div class="social-media">
+        <a href="#header"><img src="{% static 'assets/images/icons/BeliaevdesignsVertical.png' %}" alt=""></a>
+        <div class="social-media-links">
+          <a href="#"><img src="{% static 'assets/images/icons/social_media/Instagram.png' %}" alt=""></a>
+          <a href="#"><img src="{% static 'assets/images/icons/social_media/Youtube.png' %}" alt=""></a>
+          <a href="#"><img src="{% static 'assets/images/icons/social_media/Telegram.png' %}" alt=""></a>
+          <a href="#"><img src="{% static 'assets/images/icons/social_media/Facebook.png' %}" alt=""></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'script/script.js' %}"></script>
+  </body>
+</html>
